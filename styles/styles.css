@@ -1828,7 +1828,7 @@ main #crear-gifo-comenzar #comenzar-btn #comenzar-btn-p {
   text-decoration: none;
 }
 
-#color-line {
+.color-line {
   width: 100%;
   height: 5px;
   background: #572EE5;

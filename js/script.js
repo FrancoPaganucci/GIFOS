@@ -1,7 +1,6 @@
 // CHECK FOR ADDED FAVS
 var list_favorites = [];
 function checkForAddedFavs() {
-    console.log("chequeo added favs");
     if (localStorage.getItem('favs-id')) {
         list_favorites = JSON.parse(localStorage.getItem('favs-id'));
     } else if (localStorage.getItem('favs-id') == null) {
