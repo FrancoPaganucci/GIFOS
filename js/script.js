@@ -889,7 +889,8 @@ function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,this_gif_obj
     })
     // ====== GIF MAX (DESKTOP) ======
     fullsize.addEventListener('click', () => {
-        console.log("entró en gifMAx");
+        console.log("entró en gifMax");
+        fullGifFaved(this_gif_src,this_gif_title,this_gif_object);
         window.scrollTo(0, 0);
     })
     div_top.appendChild(fullsize);
@@ -984,9 +985,6 @@ function gifMax(this_gif_title,this_gif_src,this_gif_object) {
         document.getElementById("cnt-card").remove();
     })
 
-
-    
-
     // ========= ADD TO FAVS =========
     let this_gif_string = JSON.stringify(this_gif_object);
     addToFavs(this_gif_string,fav_svg);
@@ -999,4 +997,98 @@ function gifMax(this_gif_title,this_gif_src,this_gif_object) {
         download.src = "assets/icon-download-hover.svg";
         download_opacity_cnt.style.opacity = 1;
     });
+};
+
+// ========= GIF MAX FAVED =========
+function fullGifFaved(this_gif_src,this_gif_title,this_gif_object) {
+    let main = document.getElementById("main-id");
+    let cnt_card = document.createElement("div");
+    cnt_card.id = "cnt-card";
+    cnt_card.className = "mono-nocturno-main";
+    main.appendChild(cnt_card);
+    // Closebar at top
+    let closebar = document.createElement("div");
+    closebar.id = "closebar";
+    cnt_card.appendChild(closebar);
+    let close_btn = document.createElement("img");
+    close_btn.id = "close-btn";
+    close_btn.src = "assets/close.svg";
+    closebar.appendChild(close_btn);
+    //Gif fullsized
+    let gif_full = document.createElement("img");
+    gif_full.id = "gif-fullsize";
+    gif_full.src = this_gif_src;
+    cnt_card.appendChild(gif_full);
+    let info_section = document.createElement("div");
+    info_section.id = "info-section";
+    cnt_card.appendChild(info_section);
+    // Div left
+    let div_left = document.createElement("div");
+    div_left.id = "div-left";
+    info_section.appendChild(div_left);
+    let p_user = document.createElement("p");
+    p_user.id = "p-user";
+    p_user.innerHTML = "User";
+    div_left.appendChild(p_user);
+    let gifos_title = document.createElement("h3");
+    gifos_title.id = "gifos-title";
+    gifos_title.innerHTML = this_gif_title;
+    div_left.appendChild(gifos_title);
+    // Div right
+    let div_right = document.createElement("div");
+    div_right.id = "div-right";
+    info_section.appendChild(div_right);
+    let fav_svg_cnt = document.createElement("div");
+    fav_svg_cnt.id = "svg-border-1";
+    div_right.appendChild(fav_svg_cnt);
+    let fav_svg = document.createElement("img");
+    fav_svg.id = "fav-svg";
+    fav_svg.src = "assets/icon-fav-active.svg";
+    fav_svg_cnt.appendChild(fav_svg);
+    let download_svg_cnt = document.createElement("div");
+    download_svg_cnt.id = "svg-border-2";
+    div_right.appendChild(download_svg_cnt);
+    // Create <a> for ==== DOWNLOAD FUNCTION ====
+    let a_download = document.createElement("a");
+    a_download.style.margin = "auto";
+    a_download.setAttribute("download", "download");
+    download_svg_cnt.appendChild(a_download);
+
+    let href = createBlob(this_gif_src);
+    href.then(url => {
+        a_download.setAttribute("href", url);
+    })
+    a_download.setAttribute("download", "mygifo");
+    let download_svg = document.createElement("img");
+    download_svg.id = "download-svg";
+    download_svg.src = "assets/icon-download.svg";
+    a_download.appendChild(download_svg);
+
+    // CARD EVENTS
+    let close_card = document.getElementById("close-btn");
+    close_card.addEventListener('click', () => {
+        document.getElementById("cnt-card").remove();
+    })
+
+    fav_svg.addEventListener('click', () => {
+        removeFromFavs(this_gif_src);
+    })
+};
+
+// function removeFromFavs() - Busca la coincidencia de src en el localStorage y lo elimina, actualiza el localStorage y recarga la página.
+function removeFromFavs(this_gif_src) {
+    let list_favorites2 = JSON.parse(localStorage.getItem("favs-id"));
+    for (let i = 0; i < list_favorites2.length; i++) {
+        let gif_object = JSON.parse(list_favorites2[i]);
+        if (gif_object.images.original.url === this_gif_src) {
+            localStorage.clear();
+            list_favorites2.splice(i, 1);
+            backToLocalStorage(list_favorites2);
+            location.reload();
+        }
+    }
+}
+
+function backToLocalStorage(list) {
+    localStorage.setItem("favs-id", JSON.stringify(list));
 };
