@@ -1,6 +1,7 @@
 // CHECK FOR ADDED FAVS
 var list_favorites = [];
 function checkForAddedFavs() {
+    console.log("chequeo added favs");
     if (localStorage.getItem('favs-id')) {
         list_favorites = JSON.parse(localStorage.getItem('favs-id'));
     } else if (localStorage.getItem('favs-id') == null) {
@@ -793,34 +794,34 @@ let ig_hover = document.getElementById("instagram-hover");
 let slide_left = document.getElementById("slide-btn-left");
 let slide_right = document.getElementById("slide-btn-right");
 fb_hover.addEventListener('mouseenter', () => {
-    fb_hover.src = "./assets/icon_facebook_hover.svg";
+    fb_hover.src = "assets/icon_facebook_hover.svg";
 });
 fb_hover.addEventListener('mouseleave', () => {
-    fb_hover.src = "./assets/icon_facebook.svg";
+    fb_hover.src = "assets/icon_facebook.svg";
 });
 tw_hover.addEventListener('mouseenter', () => {
-    tw_hover.src = "./assets/icon-twitter-hover.svg";
+    tw_hover.src = "assets/icon-twitter-hover.svg";
 });
 tw_hover.addEventListener('mouseleave', () => {
-    tw_hover.src = "./assets/icon-twitter.svg";
+    tw_hover.src = "assets/icon-twitter.svg";
 });
 ig_hover.addEventListener('mouseenter', () => {
-    ig_hover.src = "./assets/icon_instagram-hover.svg";
+    ig_hover.src = "assets/icon_instagram-hover.svg";
 });
 ig_hover.addEventListener('mouseleave', () => {
-    ig_hover.src = "./assets/icon_instagram.svg";
+    ig_hover.src = "assets/icon_instagram.svg";
 });
 slide_left.addEventListener('mouseenter', () => {
-    slide_left.src = "./assets/button-slider-left-hover.svg";
+    slide_left.src = "assets/button-slider-left-hover.svg";
 });
 slide_left.addEventListener('mouseleave', () => {
-    slide_left.src = "./assets/button-slider-left.svg";
+    slide_left.src = "assets/button-slider-left.svg";
 });
 slide_right.addEventListener('mouseenter', () => {
-    slide_right.src = "./assets/Button-Slider-right-hover.svg";
+    slide_right.src = "assets/button-slider-right-hover.svg";
 });
 slide_right.addEventListener('mouseleave', () => {
-    slide_right.src = "./assets/Button-Slider-right.svg";
+    slide_right.src = "assets/button-slider-right.svg";
 });
 
 

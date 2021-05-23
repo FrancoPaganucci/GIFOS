@@ -98,7 +98,6 @@ function createVerMasBtn() {
 
 // createHoverCardFaved()
 function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,gif_json) {
-    console.log("CREATE HOVER CARD FAVED")
     // create hover card
     let violet_card = document.createElement("div");
     violet_card.className = "violet-cards";
@@ -117,7 +116,6 @@ function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,gif_json) {
     fav_svg.style.borderRadius = "5px";
     fav_svg.style.cursor = "pointer";
     fav_svg.addEventListener('mouseenter', () => {
-        //fav_svg.setAttribute('src', "assets/icon-fav-hover.svg");
         fav_svg.style.opacity = "2";
     });
     fav_svg.addEventListener('mouseleave', () => {
@@ -163,7 +161,8 @@ function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,gif_json) {
 
     // ====== GIFMAX EVENT ======
     fullsize.addEventListener('click', () => {
-        fullGifFaved(this_gif_title,this_gif_src);
+        fullGifFaved(this_gif_src,this_gif_title);
+        window.scrollTo(0,0);
     });
 
     div_top.appendChild(fullsize);
