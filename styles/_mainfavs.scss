@@ -1,0 +1,159 @@
+@import "variables";
+
+main {
+    .sct-favs {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        #heart-svg {
+            margin-top: 5px;
+            margin-bottom: 7px;
+        }
+        h3 {
+            font-family: 'Montserrat', bold;
+            color: $theme-color;
+            font-size: 1.25rem;
+            margin-bottom: 46px;
+        }
+
+        #ctn-results-favs {
+            display: grid;
+            align-self: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 21px;
+            @media screen and (min-width: $desktop) {
+                grid-template: repeat(3,1fr)/repeat(4,1fr);
+                grid-gap: 29px;
+                align-self: center;
+            }
+            .gifs-result {
+                height: 120px;
+                width: 156px;
+                @media screen and (min-width: $desktop) {
+                    width: 260px;
+                    height: 200px;
+                    overflow: hidden;
+                }  
+            }
+            
+            .hover-containers {
+                width: 260px;
+                height: 200px;
+                
+                .violet-cards {
+                    background: $theme-color;
+                    position: absolute;
+                    height: 200px;
+                    width: 260px;
+                    opacity: 0;
+                    overflow: hidden;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+    
+                    #hover-div-top {
+                        display: flex;
+                        justify-content: flex-end;
+                        column-gap: 10px;
+                        margin-right: 10px;
+                        margin-top: 10px;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+    
+                    #hover-div-bottom {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+                        margin-top: 90px;
+                        #p-user {
+                            font-family: 'Roboto';
+                            font-size: 15px;
+                            color: #FFFFFF;
+                            margin-left: 13px;
+                        }
+                        #gif-title {
+                            font-family: 'Roboto', bold;
+                            font-size: 16px;
+                            color: #FFFFFF;
+                            margin-left: 12px;
+                        }
+                    }
+                }
+
+                .gifs-result {
+                    height: 120px;
+                    width: 156px;
+                    @media screen and (min-width: $desktop) {
+                        width: 260px;
+                        height: 200px;
+                        overflow: hidden;
+                    }  
+                }
+            }  
+        }
+
+        #ctn-btn-vermas-favs {
+            display: flex;
+            flex-direction: column;
+            #btn-vermas-favs {
+                height: 50px;
+                width: 127px;
+                margin-top: 78px;
+                margin-bottom: 79px;
+                align-self: center;
+                border-radius: 25px;
+                border: 1px solid $theme-color;
+                background-color: #FFFFFF;
+                #ver-mas-p-favs {
+                    font-family: 'Montserrat', bold;
+                    font-size: 13px;
+                    letter-spacing: 0;
+                    text-align: center;
+                    color: $theme-color;
+                }
+            }
+        }
+
+    }
+}
+
+main .sct-trending #slider #reel .hover-containers .violet-cards {
+    top: 0;
+}
+
+.footer-fav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .p1 {
+        font-family: 'Roboto';
+        font-size: 0.9375rem;
+        color: #000000;
+        margin-top: 47px;
+        margin-bottom: 24px;
+    }
+
+    .links {
+        display: flex;
+        gap: 19px;
+        margin-bottom: 47.8px;
+    }
+
+    .p2 {
+        font-family: 'Roboto';
+        font-size: 0.875rem;
+        color: #000000;
+        letter-spacing: 0;
+        line-height: 20px;
+        margin-bottom: 28px;
+    }
+}

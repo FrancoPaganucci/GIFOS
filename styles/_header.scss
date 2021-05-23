@@ -1,0 +1,133 @@
+@import "variables";
+
+header {
+    width: 100%;
+    display: block;
+    position: relative;
+    height: 95px;
+    top: 0;
+    z-index: 1000;
+    a .main-logo {
+        height: 48.8px;
+        width: 48.8px;
+        float: left;
+        margin-left: 22px;
+        padding-top: 25px;
+    }
+    nav {
+        float: right;
+        .menu {
+            padding-top: 3px;
+            margin-top: 40px;
+            @media screen and (min-width: $desktop) {
+                    padding-top: 0px;
+                    margin-top: 0px;
+            }
+            #icon-hambur {
+                right: 26px;
+                bottom: 26px;
+                margin-right: 26px;
+                
+                @media screen and (min-width: $desktop) {
+                    position: absolute;
+                    visibility: hidden;
+                }
+            }
+            #icon-close {
+                right: 46px;
+                bottom: 26px;
+                display: none;
+                margin-right: 26px;
+
+                @media screen and (min-width: $desktop) {
+                    position: absolute;
+                    visibility: none;   
+                }
+            }
+            ul {
+                display: none;
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                left: 0;
+                top: 95px;
+                background-color: $theme-color;
+                opacity: 90%;
+
+                @media screen and (min-width: $desktop) {
+                    display: flex;
+                    height: 95px;
+                    margin-right: 156px;
+                    position: relative;
+                    background-color: #FFFFFF;
+                    opacity: 100%;
+                    top: 0px;
+                    align-items: center;
+                }
+                li {
+                    position: relative;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                    @media screen and (min-width: $desktop) {
+                        padding: 0;
+                        margin-left: 41.5px;
+                        display: flex;
+                    }
+                    br {
+                        @media screen and (min-width: $desktop) {
+                            display: none;
+                        }
+                    }
+                    a {
+                        align-items: flex-end;
+                        z-index: 20000;
+                        height: 50px;
+                        color: #FFFFFF;
+                        display: flex;
+                        align-self: center;
+                        cursor: pointer;
+                        @media screen and (min-width: $desktop) {
+                            color: $theme-color;
+                            font-family: 'Montserrat', bold;
+                            font-weight: 800;
+                            align-items: center;
+                            &:hover {
+                                text-decoration-line: underline;
+                                text-decoration-color: $theme-green;
+                                text-decoration-thickness: 2px;
+                            }
+                            &:active {
+                                color: #9CAFC3;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .separador {
+                        height: 0.1px;
+                        width: 41px;
+                        opacity: 0.5;
+                        border: 1px solid #FFFFFF;
+                        margin: 0 auto;
+                        margin-top: 16px;
+                        @media screen and (min-width: $desktop) {
+                            position: absolute;
+                            visibility: hidden;
+                        }
+                    }
+                }
+                // cuarto link del menu oculto en mobile
+                #cuarto-li {
+                    z-index: -1;
+                    visibility: hidden;
+                    @media screen and (min-width: $desktop) {
+                        z-index: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+}

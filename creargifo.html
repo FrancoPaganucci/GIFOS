@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <title>Crea tu GIFO</title>
+</head>
+<body class="modo-nocturno-main">
+    <div id="color-line"></div>
+    <a name="top"></a>
+    <header class="modo-nocturno-main">
+        <a href="home.html"><img id="main-logo" class="main-logo" src="assets/logo-mobile.svg" alt=""></a>
+        <nav>
+            <div class="menu">
+                <img id="icon-hambur" class="burger-icon" src="assets/burger.svg" alt="desplegar-menú"
+                    onclick="openMenu()">
+                <img id="icon-close" onclick="closeMenu()" src="assets/close.svg" alt="cerrar-menú"
+                    class="burger-icon-close">
+
+                <ul id="menu-display" class="modo-nocturno-menu">
+                    <li><a id="a-noct">Modo Nocturno</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li><a href="favoritos.html">Favoritos</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li><a href="misgifos.html">Mis GIFOS</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li id="cuarto-li"><a href="creargifo.html"><img id="crear-gifo-icon" src="assets/button-crear-gifo.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="modo-nocturno-main" id="main-id">
+         
+        <!--Sección visualizador -->
+         <section id="crear-gifo-main" class="sct-favs modo-nocturno-main">
+            
+            <div id="cnt-camera">
+                <img id="camera-svg" src="assets/camara.svg" alt="imagen cámara">
+                <img id="camera-light-svg" src="assets/element-luz-camara.svg" alt="luz cámara">
+            </div>
+
+            <div id="visualizer">
+                <div id="screen">
+                    <div id="topleft"></div>
+                    <div id="topright"></div>
+                    <h1 id="create-gifo-title">Aquí podrás <br>crear tus propios <span class="theme-green">GIFOS</span></h1>
+                    <p id="create-gifo-p">¡Crea tu GIFO en sólo 3 pasos!<br>(sólo necesitas una cámara para grabar un video)</p>
+                    <video class="video" id="video-rec">
+                    <div id="bottomleft"></div>
+                    <div id="bottomright"></div>
+                </div>
+                <div id="lower-info">
+                    <div id="rec-steps">
+                        <div class="pasos" id="paso1">
+                            <p class="inner-number" id="inner-number-1">1</p>
+                        </div>
+                        <div class="pasos" id="paso2">
+                            <p class="inner-number" id="inner-number-2">2</p>
+                        </div>
+                        <div class="pasos" id="paso3">
+                            <p class="inner-number" id="inner-number-3">3</p>
+                        </div>
+                        <div id="timer">        
+                        </div>
+                    </div>
+                    
+                </div>
+                </div>
+
+            <div id="camera-roll">
+                <img src="assets/pelicula.svg" alt="camera roll">
+            </div>
+        </section>
+
+        <!--seccion separador y comenzar -->
+        <section id="crear-gifo-comenzar">
+            <div id="rec-separator"></div>
+            <div id="comenzar-btn">
+                <p id="comenzar-btn-p">COMENZAR</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="p1">Compartir en:</p>
+        <div class="links">
+            <a href=""><img id="facebook-hover" src="assets/icon_facebook.svg" alt="logo_facebook"></a>
+            <a href=""><img id="twitter-hover" src="assets/icon-twitter.svg" alt="logo_twitter"></a>
+            <a href=""><img id="instagram-hover" src="assets/icon_instagram.svg" alt="logo_instagram"></a>
+        </div>
+        <p class="p2">© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div id="color-line"></div>
+
+    <!-- JS -->
+    
+    <script src="js/header.js"></script>
+    <script src="js/record-gif.js"></script>
+    <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://www.webrtc-experiment.com/gif-recorder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+</body>
+</html>

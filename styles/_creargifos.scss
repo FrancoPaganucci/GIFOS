@@ -1,0 +1,171 @@
+main {
+    #crear-gifo-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-left: -29px;
+        #cnt-camera {
+            display: flex;
+            #camera-light-svg {
+                margin-left: 2px;
+                margin-top: 10px;
+            }
+        }
+        #visualizer {
+            display: flex;
+            flex-direction: column;
+            #screen {
+                position: relative;
+                border: 1px solid $theme-color;
+                height: 390px;
+                width: 688px;
+                display: flex;
+                flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                #topleft{
+                    position: absolute;
+                    border: 1px solid #FFFFFF;
+                    border-top-color: $theme-green;
+                    border-left-color: $theme-green;
+                    top: 0;
+                    left: 0;
+                    width: 27px;
+                    height: 25px;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                }
+                #topright {
+                    position: absolute;
+                    border: 1px solid #FFFFFF;
+                    border-top-color: $theme-green;
+                    border-right-color: $theme-green;
+                    top: 0;
+                    right: 0;
+                    width: 25px;
+                    height: 27px;
+                    margin-top: 20px;
+                    margin-right: 20px;
+                }
+                #create-gifo-title {
+                    font-family: 'Montserrat', bold;
+                    font-size: 25px;
+                    color: $theme-color;
+                    text-align: center;
+                    line-height: 35px;
+                    .theme-green {
+                        color: $theme-green;
+                    }
+                }
+                #create-gifo-p {
+                    font-family: 'Roboto';
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 29px;
+                    margin-top: 3px;
+                }
+                #video-rec {
+                    display: none;
+                }
+                #bottomleft {
+                    position: absolute;
+                    border: 1px solid #FFFFFF;
+                    border-bottom-color: $theme-green;
+                    border-left-color: $theme-green;
+                    bottom: 0;
+                    left: 0;
+                    width: 25px;
+                    height: 27px;
+                    margin-left: 21px;
+                    margin-bottom: 19px;
+                }
+                #bottomright {
+                    position: absolute;
+                    border: 1px solid #FFFFFF;
+                    border-bottom-color: $theme-green;
+                    border-right-color: $theme-green;
+                    bottom: 0;
+                    right: 0;
+                    width: 27px;
+                    height: 25px;
+                    margin-bottom: 19px;
+                    margin-right: 20px;
+                }
+            }
+            #lower-info {
+                display: flex;
+                flex-flow: column;
+                #rec-steps {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: 26px;
+                    margin-top: 26px;
+                    margin-bottom: 19px;
+                    .pasos {
+                       height: 32px;
+                       width: 32px;
+                       border: 1px solid $theme-color;
+                       border-radius: 50%;
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       .inner-number {
+                           font-size: 18px;
+                           font-family: 'Roboto';
+                           color: $theme-color;
+                       }
+                    }
+                    #timer {
+                        position: absolute;
+                        left: 917px;
+                        //top: 425px;
+                        text-align: left;
+                        font-family: 'Montserrat';
+                        font-weight: 800;
+                        letter-spacing: 0;
+                        line-height: 22px;
+                        font-size: 15px;
+                        color: $theme-color;
+                    }
+                }
+                
+            }
+            
+        }
+        #camera-roll {
+            position: relative;
+            align-self: flex-end;
+            left: 67px;
+        }
+    }
+    #crear-gifo-comenzar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        #rec-separator {
+            background: $theme-color;
+            width: 795.9px;
+            height: 6.9px;
+        }
+        #comenzar-btn {
+            margin-top: 20.1px;
+            width: 127px;
+            height: 50px;
+            border: 1px solid $theme-color;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $theme-color;
+            &:hover {
+                background-color: $theme-color;
+                color: #FFFFFF;
+            }
+            #comenzar-btn-p {
+                font-family: 'Montserrat', bold;
+                font-size: 13px;
+                letter-spacing: 0;
+            }
+        }
+    }
+}

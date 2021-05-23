@@ -1,0 +1,101 @@
+#ctn-results-mis-GIFOS {
+    display: flex;
+    flex-direction: column;
+    #no-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #no-misgifos-img {
+            margin: 0;
+            margin-top: 20px;
+        }
+        #no-results-title {
+            font-family: 'Montserrat', bold;
+            font-size: 16px;
+            color: $theme-green;
+            text-align: center;
+            line-height: 25px;
+            margin-top: 40px;
+            margin-bottom: 46px;
+        }
+    }
+    #results {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 1fr;
+        gap: 21px;
+        @media screen and (min-width: $desktop) {
+            grid-template: repeat(3,1fr)/repeat(4,1fr);
+            grid-gap: 29px;
+            align-self: center;
+        }
+        .gifs-result {
+            height: 120px;
+            width: 156px;
+            @media screen and (min-width: $desktop) {
+                width: 260px;
+                height: 200px;
+                overflow: hidden;
+            }  
+        }
+
+        .hover-containers {
+            width: 260px;
+            height: 200px;
+            
+            .violet-cards {
+                background: $theme-color;
+                position: absolute;
+                height: 200px;
+                width: 260px;
+                opacity: 0;
+                overflow: hidden;
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                #hover-div-top {
+                    display: flex;
+                    justify-content: flex-end;
+                    column-gap: 10px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                #hover-div-bottom {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    margin-top: 90px;
+                    #p-user {
+                        font-family: 'Roboto';
+                        font-size: 15px;
+                        color: #FFFFFF;
+                        margin-left: 13px;
+                    }
+                    #gif-title {
+                        font-family: 'Roboto', bold;
+                        font-size: 16px;
+                        color: #FFFFFF;
+                        margin-left: 12px;
+                    }
+                }
+            }
+
+            .gifs-result {
+                height: 120px;
+                width: 156px;
+                @media screen and (min-width: $desktop) {
+                    width: 260px;
+                    height: 200px;
+                    overflow: hidden;
+                }  
+            }
+        }
+    }
+}

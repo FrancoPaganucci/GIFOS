@@ -1,0 +1,41 @@
+@import "variables", "header", "main", "mainfavs", "misgifos","creargifos";
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+#color-line {
+    width: 100%;
+    height: 5px;
+    background: $theme-color;
+}
+// Clases modo nocturno
+.modo-nocturno-main-on {
+    background-color: $theme-color-noct;
+    color: $font-color-noct !important;
+    border-color: $border-color-noct;
+}
+.modo-nocturno-trending-on {
+    background-color: $theme-color-noct2 !important;
+    color: $font-color-noct !important;
+}
+.modo-nocturno-footer-on {
+    background-color: $footer-color-noct;
+    color: $font-color-noct !important;
+}
+.modo-nocturno-menu-on {
+    background-color: #000000 !important;
+    @media screen and (min-width: $desktop) {
+        background-color: $theme-color-noct !important;
+        color: #FFFFFF !important;
+        display: inline-flex !important;
+    }
+}
+.borders-noct-on {
+    border: 1px solid #FFFFFF !important;
+}

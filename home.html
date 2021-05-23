@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <title>Home GIFOS</title>
+</head>
+
+<body class="modo-nocturno-main">
+    <div id="color-line"></div>
+    <a name="top"></a>
+    <header class="modo-nocturno-main">
+        <a href="home.html"><img id="main-logo" class="main-logo" src="assets/logo-mobile.svg" alt=""></a>
+        <nav>
+            <div class="menu">
+                <img id="icon-hambur" class="burger-icon" src="assets/burger.svg" alt="desplegar-menú"
+                    onclick="openMenu()">
+                <img id="icon-close" onclick="closeMenu()" src="assets/close.svg" alt="cerrar-menú"
+                    class="burger-icon-close">
+
+                <ul id="menu-display" class="modo-nocturno-menu">
+                    <li><a class="modo-nocturno-menu" id="a-noct">Modo Nocturno</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li><a class="modo-nocturno-menu" href="favoritos.html">Favoritos</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li><a class="modo-nocturno-menu" href="misgifos.html">Mis GIFOS</a><br>
+                        <div class="separador"></div>
+                    </li>
+                    <li id="cuarto-li"><a class="modo-nocturno-menu" href="creargifo.html"><img id="crear-gifo-icon" src="assets/button-crear-gifo.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--main con secciones-->
+    <main class="modo-nocturno-main" id="main-id">
+        <!--Título, buscador y trending-->
+        <section class="sct-main modo-nocturno-main">
+            <h1 class="modo-nocturno-main">Inspírate, busca, guarda, y crea los mejores <span
+                    class="theme-green">GIFOS</span></h1>
+
+            <img class="img-buscador" src="assets/ilustra_header.svg" alt="imagen_buscador">
+            <div class="searchbar modo-nocturno-main borders-noct" id="searchbar">
+                <!--input de la búsqueda-->
+                <input placeholder="Busca GIFOS y más" autocomplete="off" class="modo-nocturno-main" id="search-input">
+
+                </input>
+                <img id="search-icon" src="assets/icon-search.svg" alt="icono_buscar">
+            </div>
+
+            <h3 class="trending-title modo-nocturno-main">
+                Trending:
+            </h3>
+            <p class="trending-p modo-nocturno-main">Reactions, Entertainment, Sports, Stickers, Artists</p>
+
+            <!--Acá va un div separador y abajo los gifs traídos de la API según la palabra buscada-->
+            <section id="ctn-results">
+                <!--
+                    Generar dinámicamente esto
+                -->
+            </section>
+            <section id="ctn-btn-vermas">
+                <!--
+                    Generar dinámicamente esto
+                -->
+            </section>
+
+        </section>
+
+        <!--Trending GIFOS-->
+        <section class="sct-trending modo-nocturno-trending" id="sct-trending">
+            <h2 class="modo-nocturno-trending">Trending GIFOS</h2>
+
+            <p class="p-black modo-nocturno-trending">Mira los últimos<br> GIFOS de nuestra comunidad</p>
+
+            <div id="slider">
+                <img id="slide-btn-left" src="assets/button-slider-left.svg" alt="slide left">
+                <!--Reel de gifs traídos desde la API-->
+                <div id="reel" class="reel modo-nocturno-trending">
+                </div>
+                <img id="slide-btn-right" src="assets/Button-Slider-right.svg" alt="slide right">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="p1">Compartir en:</p>
+        <div class="links">
+            <a href=""><img id="facebook-hover" src="assets/icon_facebook.svg" alt="logo_facebook"></a>
+            <a href=""><img id="twitter-hover" src="assets/icon-twitter.svg" alt="logo_twitter"></a>
+            <a href=""><img id="instagram-hover" src="assets/icon_instagram.svg" alt="logo_instagram"></a>
+        </div>
+        <p class="p2">© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div id="color-line"></div>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+    <script src="js/header.js"></script>
+    <!--<script src="js/script-favs.js"></script>-->
+</body>
+
+</html>
