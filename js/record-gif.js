@@ -86,8 +86,6 @@ if (nightmode_check === "true") {
     nightMode();
 }
 
-//document.getElementById("timer").removeEventListener('click', repetirCaptura)
-
 function captureCamera() {
     btnrecord.style.visibility = "hidden";
     document.getElementById("paso1").style.backgroundColor = "#572EE5";
