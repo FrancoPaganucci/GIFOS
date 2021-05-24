@@ -86,7 +86,7 @@ if (nightmode_check === "true") {
     nightMode();
 }
 
-
+//document.getElementById("timer").removeEventListener('click', repetirCaptura)
 
 function captureCamera() {
     btnrecord.style.visibility = "hidden";
@@ -160,17 +160,23 @@ function startRecording() {
 
 // Stop recording
 function stopRecording() {
-    console.log("Ahora finalizar la grabación. Entró a la función...");
     btnrecord.removeEventListener('click',stopRecording);
     recorder.stopRecording(stopRecordingCallback);
     stopTimer();
     document.getElementById("timer").innerHTML = "REPETIR CAPTURA";
+    document.getElementById("timer").style.cursor = "pointer";
+    // agregar evento repetir captura
+    document.getElementById("timer").addEventListener('click', repetirCaptura);
     btnrecord.innerHTML = "SUBIR GIFO";
     document.getElementById("timer").style.textDecoration = "underline";
     document.getElementById("timer").style.textDecorationColor = "#50E3C2";
     document.getElementById("timer").style.textDecorationThickness = "3px";
     // agregar event listener uploadGif()
     btnrecord.addEventListener('click', uploadGif);
+}
+
+function repetirCaptura() {
+    location.reload();
 }
 
 function stopRecordingCallback() {
