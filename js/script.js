@@ -344,18 +344,18 @@ function createHoverCard(this_gif_title,hover_cnt,this_gif_src,this_gif_object, 
     fav_svg.style.cursor = "pointer";
     fav_svg.setAttribute('src', "./assets/icon-fav.svg");
     fav_svg.addEventListener('mouseenter', () => {
+        console.log("mouseenter")
         fav_svg.setAttribute('src', "./assets/icon-fav-hover.svg");
-    });('mouseleave', () => {
-        if (fav_svg.src = "./assets/icon-fav-hover.svg") {
+    });
+    fav_svg.addEventListener('mouseleave', () => {
+            console.log("mouseleave");
             fav_svg.setAttribute('src', "./assets/icon-fav.svg");
-        }
-    })
+    });
     fav_svg.addEventListener('click', () => {
         // remove hover card, create hover card faved
         document.getElementById("violet-card-"+i).remove();
-        console.log("borraste la hover card")
         createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,this_gif_object);
-    })
+    });
     div_top.appendChild(fav_svg);
     // ========= ADD TO FAVS =========
     let this_gif_string = JSON.stringify(this_gif_object);
