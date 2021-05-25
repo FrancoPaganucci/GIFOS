@@ -22,11 +22,11 @@ function closeMenu() {
 // hover + svg
 let create_gif_svg = document.getElementById("crear-gifo-icon");
 create_gif_svg.addEventListener('mouseenter',() => {
-    create_gif_svg.setAttribute('src', "assets/CTA-crear-gifo-hover.svg");
+    create_gif_svg.setAttribute('src', "./assets/CTA-crear-gifo-hover.svg");
 });
 create_gif_svg.addEventListener('mouseleave', () => {
-    create_gif_svg.setAttribute('src',"assets/button-crear-gifo.svg")
+    create_gif_svg.setAttribute('src',"./assets/button-crear-gifo.svg")
 });
 create_gif_svg.addEventListener('click', () => {
-    create_gif_svg.setAttribute('src', "assets/CTA-crear-gifo-active.svg");
+    create_gif_svg.setAttribute('src', "./assets/CTA-crear-gifo-active.svg");
 });

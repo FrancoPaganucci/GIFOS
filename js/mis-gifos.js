@@ -64,7 +64,7 @@ function createHoverCardMisGifos(hover_cnt,this_gif_src,gifo_key) {
     // ========= REMOVE FROM MIS GIFOS =========
     let trash_svg = document.createElement("img")
     trash_svg.id = "trash-svg";
-    trash_svg.setAttribute('src', "assets/icon-trash-normal.svg");
+    trash_svg.setAttribute('src', "./assets/icon-trash-normal.svg");
     trash_svg.style.opacity = "0.7";
     trash_svg.style.display = "flex";
     trash_svg.style.backgroundColor = "white";
@@ -96,12 +96,12 @@ function createHoverCardMisGifos(hover_cnt,this_gif_src,gifo_key) {
     // download btn
     let download_svg = document.createElement("img");
     download_svg.id = "download-svg";
-    download_svg.setAttribute('src', "assets/icon-download.svg");
+    download_svg.setAttribute('src', "./assets/icon-download.svg");
     download_svg.addEventListener('mouseenter', () => {
-        download_svg.setAttribute('src', "assets/icon-download-hover.svg");
+        download_svg.setAttribute('src', "./assets/icon-download-hover.svg");
     });
     download_svg.addEventListener('mouseleave', () => {
-        download_svg.setAttribute('src', "assets/icon-download.svg");
+        download_svg.setAttribute('src', "./assets/icon-download.svg");
     })
     a_download.appendChild(download_svg);
 
@@ -109,12 +109,12 @@ function createHoverCardMisGifos(hover_cnt,this_gif_src,gifo_key) {
     let fullsize = document.createElement("img")
     fullsize.id = "fullsize-svg";
     fullsize.style.cursor = "pointer";
-    fullsize.setAttribute('src', "assets/icon-max-normal.svg");
+    fullsize.setAttribute('src', "./assets/icon-max-normal.svg");
     fullsize.addEventListener('mouseenter', () => {
-        fullsize.setAttribute('src', "assets/icon-max-hover.svg");
+        fullsize.setAttribute('src', "./assets/icon-max-hover.svg");
     });
     fullsize.addEventListener('mouseleave', () => {
-        fullsize.setAttribute('src', "assets/icon-max-normal.svg");
+        fullsize.setAttribute('src', "./assets/icon-max-normal.svg");
     })
     // FULLSIZE EVENT
     fullsize.addEventListener('click', () => {
@@ -176,7 +176,7 @@ function gifMax(gifo_key) {
     cnt_card.appendChild(closebar);
     let close_btn = document.createElement("img");
     close_btn.id = "close-btn";
-    close_btn.src = "assets/close.svg";
+    close_btn.src = "./assets/close.svg";
     closebar.appendChild(close_btn);
     //Gif fullsized
     let gif_full = document.createElement("img");
@@ -207,7 +207,7 @@ function gifMax(gifo_key) {
     div_right.appendChild(trash_svg_cnt);
     let trash_svg = document.createElement("img");
     trash_svg.id = "fav-svg";
-    trash_svg.src = "assets/icon-trash-normal.svg";
+    trash_svg.src = "./assets/icon-trash-normal.svg";
     trash_svg_cnt.appendChild(trash_svg);
     let download_svg_cnt = document.createElement("div");
     download_svg_cnt.id = "svg-border-2";
@@ -225,7 +225,7 @@ function gifMax(gifo_key) {
     a_download.setAttribute("download", "mygifo");
     let download_svg = document.createElement("img");
     download_svg.id = "download-svg";
-    download_svg.src = "assets/icon-download.svg";
+    download_svg.src = "./assets/icon-download.svg";
     a_download.appendChild(download_svg);
 
     // CARD EVENTS

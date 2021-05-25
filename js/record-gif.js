@@ -61,15 +61,15 @@ function nightMode() {
 
     // toggle logo + menú icons
     if (b) {
-        document.getElementById("main-logo").src = "assets/logo-mobile-modo-noct.svg";
-        document.getElementById("icon-hambur").src = "assets/burger-modo-noct.svg";
-        document.getElementById("icon-close").src = "assets/close-modo-noct.svg";
+        document.getElementById("main-logo").src = "./assets/logo-mobile-modo-noct.svg";
+        document.getElementById("icon-hambur").src = "./assets/burger-modo-noct.svg";
+        document.getElementById("icon-close").src = "./assets/close-modo-noct.svg";
         b = false
     }
     else if (!b) {
-        document.getElementById("main-logo").src = "assets/logo-mobile.svg";
-        document.getElementById("icon-hambur").src = "assets/burger.svg";
-        document.getElementById("icon-close").src = "assets/close.svg";
+        document.getElementById("main-logo").src = "./assets/logo-mobile.svg";
+        document.getElementById("icon-hambur").src = "./assets/burger.svg";
+        document.getElementById("icon-close").src = "./assets/close.svg";
         b = true;
     }
 
@@ -266,7 +266,7 @@ function gifBuffering() {
     upload_card.style.alignItems = "center";
     upload_card.style.justifyContent = "center";
     const buffer_img = document.createElement("img");
-    buffer_img.setAttribute('src', "assets/loader.svg");
+    buffer_img.setAttribute('src', "./assets/loader.svg");
     buffer_img.style.height = "22px";
     buffer_img.style.width = "22px";
     buffer_img.style.marginBottom = "10px";
@@ -306,7 +306,7 @@ function uploadSuccesfull(this_gif_src,gif_id) {
     upload_card.style.alignItems = "center";
     upload_card.style.justifyContent = "center";
     const buffer_img = document.createElement("img");
-    buffer_img.setAttribute('src', "assets/ok.svg");
+    buffer_img.setAttribute('src', "./assets/ok.svg");
     buffer_img.style.height = "22px";
     buffer_img.style.width = "22px";
     buffer_img.style.marginBottom = "10px";
@@ -325,12 +325,12 @@ function uploadSuccesfull(this_gif_src,gif_id) {
     btns_cnt.style.marginTop = "11px";
     btns_cnt.style.marginRight = "12px";
     const link_icon = document.createElement("img");
-    link_icon.setAttribute('src', "assets/icon-link-normal.svg");
+    link_icon.setAttribute('src', "./assets/icon-link-normal.svg");
     link_icon.style.height = "32px";
     link_icon.style.width = "32px";
     link_icon.style.marginLeft = "10px"
     const download_icon = document.createElement("img");
-    download_icon.setAttribute('src', "assets/icon-download.svg");
+    download_icon.setAttribute('src', "./assets/icon-download.svg");
     download_icon.style.height = "32px";
     download_icon.style.width = "32px";
     download_icon.id = "download-icon"
@@ -357,16 +357,16 @@ function uploadSuccesfull(this_gif_src,gif_id) {
 
     // Hover events
     download_icon.addEventListener('mouseenter', () => {
-        download_icon.setAttribute('src', "assets/icon-download-hover.svg");
+        download_icon.setAttribute('src', "./assets/icon-download-hover.svg");
     });
     download_icon.addEventListener('mouseleave', () => {
-        download_icon.setAttribute('src', "assets/icon-download.svg");
+        download_icon.setAttribute('src', "./assets/icon-download.svg");
     });
     link_icon.addEventListener('mouseenter', () => {
-        link_icon.setAttribute('src', "assets/icon-link-hover.svg");
+        link_icon.setAttribute('src', "./assets/icon-link-hover.svg");
     });
     link_icon.addEventListener('mouseleave', () => {
-        link_icon.setAttribute('src', "assets/icon-link-normal.svg")
+        link_icon.setAttribute('src', "./assets/icon-link-normal.svg")
     });
     // ===== COPY LINK TO CLIPBOARD =====
     link_icon.addEventListener('click', () => {
