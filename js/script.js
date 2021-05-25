@@ -818,10 +818,10 @@ slide_left.addEventListener('mouseleave', () => {
     slide_left.src = "./assets/button-slider-left.svg";
 });
 slide_right.addEventListener('mouseenter', () => {
-    slide_right.src = "./assets/button-slider-right-hover.svg";
+    slide_right.src = "./assets/Button-Slider-right-hover.svg";
 });
 slide_right.addEventListener('mouseleave', () => {
-    slide_right.src = "./assets/button-slider-right.svg";
+    slide_right.src = "./assets/Button-Slider-right.svg";
 });
 
 
