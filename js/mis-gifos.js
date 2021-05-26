@@ -4,7 +4,6 @@ const GIPHY_URL = 'https://media.giphy.com/media/';
 // CHECK FOR ADDED "Mis GIFOS"...
 var list_mis_gifos = [];
 function checkForAddedMisGifos() {
-    console.log("chequeo added Mis GIFOS");
     if (localStorage.getItem('myGifoKey')) {
         list_mis_gifos = JSON.parse(localStorage.getItem('myGifoKey'));
     } else if (localStorage.getItem('myGifoKey') == null) {
@@ -24,12 +23,9 @@ function getMyGifos() {
     if (list_mis_gifos.length !== 0) {
         document.getElementById("no-results").style.display = "none";
         let ctn_results = document.getElementById("results");
-        console.log("entró el getMyGifos");
         for (let i = 0; i < list_mis_gifos.length; i++) {
             // parse each object within list to acces keys
-            console.log("entró al for de GetMyGifos")
             let gifo_key = list_mis_gifos[i].id;
-            console.log("gifo_key: " + gifo_key);
             let this_gif_src = `${GIPHY_URL}${gifo_key}/giphy.gif`;
 
             // IF DESKTOP, HOVER ON GIFS
@@ -87,7 +83,6 @@ function createHoverCardMisGifos(hover_cnt,this_gif_src,gifo_key) {
     let a_download = document.createElement("a");
     a_download.setAttribute("download", "download");
     div_top.appendChild(a_download);
-    console.log("LINK PARA CREAR BLOB EN MISGIFOS: "+ this_gif_src);
     let href = createBlob(this_gif_src);
     href.then(url => {
         a_download.setAttribute("href", url);
@@ -141,13 +136,9 @@ function createHoverCardMisGifos(hover_cnt,this_gif_src,gifo_key) {
 
 // REMOVE (trash icon)
 function removeFromMisGifos(gifo_key) {
-    console.log("entra el remove from my gifos")
     let list_mis_gifos = JSON.parse(localStorage.getItem("myGifoKey"));
     for (let i = 0; i < list_mis_gifos.length; i++) {
-        console.log("entra al for")
         let gif_id = list_mis_gifos[i];
-        console.log("gif id: " + gif_id.id);
-        console.log("gifo_key: "+ gifo_key);
         if (gif_id.id === gifo_key) {
             localStorage.clear();
             list_mis_gifos.splice(i, 1);
@@ -157,7 +148,6 @@ function removeFromMisGifos(gifo_key) {
     }
 }
 function backToLocalStorage(list) {
-    console.log("In function back to LS. Lista importada: "+list);
     localStorage.setItem("myGifoKey", JSON.stringify(list));
 }
 

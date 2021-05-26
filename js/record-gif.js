@@ -7,7 +7,6 @@ const GIPHY_URL = 'https://media.giphy.com/media/';
 // CHECK FOR ADDED "Mis GIFOS"...
 var list_mis_gifos = [];
 function checkForAddedMisGifos() {
-    console.log("chequeo added Mis GIFOS");
     if (localStorage.getItem('myGifoKey')) {
         list_mis_gifos = JSON.parse(localStorage.getItem('myGifoKey'));
     } else if (localStorage.getItem('myGifoKey') == null) {
@@ -19,7 +18,6 @@ checkForAddedMisGifos();
 
 // night mode check
 let nightmode_check = localStorage.getItem("nightmode-status");
-console.log("nightmode_check al ppio del refresh: " + nightmode_check);
 var btn_noct = document.getElementById("a-noct");
 var night = document.getElementsByClassName("modo-nocturno-main");
 var night_trending = document.getElementsByClassName("modo-nocturno-trending");
@@ -35,11 +33,9 @@ btn_noct.addEventListener('click', nightMode);
 btn_noct.addEventListener('click', () => {
     if (nightmode_check !== "true") {
         nightmode_check = "true";
-        console.log(nightmode_check);
         localStorage.setItem("nightmode-status", "true");
     } else {
         nightmode_check = "false";
-        console.log(nightmode_check);
         localStorage.setItem("nightmode-status", "false");
     }
 })
@@ -96,7 +92,6 @@ function captureCamera() {
     navigator.mediaDevices.getUserMedia({
         video: true
     }).then(stream => {
-        console.log(stream);
         video.srcObject = stream;
         video.play();
         video.style.height = "320px";
@@ -128,7 +123,6 @@ btnrecord.addEventListener('click', captureCamera);
 
 // Start Recording
 function startRecording() {
-    console.log("entró a startRecording");
     navigator.mediaDevices.getUserMedia({
         video: true
     }).then(stream => {
@@ -218,7 +212,6 @@ function printTimer() {
 };
 
 function stopTimer() {
-    console.log("se ejecuta stopTimer")
     clearInterval(timerView);
 }
 
@@ -241,7 +234,6 @@ function uploadGif() {
         let this_gif_src = `${GIPHY_URL}${response.data.id}/giphy.gif`;
         uploadSuccesfull(this_gif_src,response.data.id);
         let id_toLocal = JSON.stringify(response.data);
-        console.log("ID TO LOCAL: " + id_toLocal);
         list_mis_gifos.push(response.data);
         localStorage.setItem('myGifoKey',JSON.stringify(list_mis_gifos));
     })
@@ -329,6 +321,7 @@ function uploadSuccesfull(this_gif_src,gif_id) {
     link_icon.style.height = "32px";
     link_icon.style.width = "32px";
     link_icon.style.marginLeft = "10px"
+    link_icon.style.cursor = "pointer";
     const download_icon = document.createElement("img");
     download_icon.setAttribute('src', "./assets/icon-download.svg");
     download_icon.style.height = "32px";
@@ -336,17 +329,15 @@ function uploadSuccesfull(this_gif_src,gif_id) {
     download_icon.id = "download-icon"
 
     // ===== DOWNLOAD ====
-    console.log("esto es el gif src: " + this_gif_src)
     let a_download = document.createElement("a");
     a_download.setAttribute("download", "download");
-    a_download.appendChild(download_icon);
-    
+    a_download.style.cursor = "pointer";
     let href = createBlob(this_gif_src);
     href.then(url => {
         a_download.setAttribute("href", url);
     })
     a_download.setAttribute("download", "mygifo");
-
+    a_download.appendChild(download_icon);
     btns_cnt.appendChild(a_download);
     btns_cnt.appendChild(link_icon);
     upload_card.appendChild(btns_cnt);
@@ -371,7 +362,6 @@ function uploadSuccesfull(this_gif_src,gif_id) {
     // ===== COPY LINK TO CLIPBOARD =====
     link_icon.addEventListener('click', () => {
         const copyLink = `${GIPHY_URL}${gif_id}/giphy.gif`;
-        console.log("copy link: " + copyLink);
         copy(copyLink);
     })
 

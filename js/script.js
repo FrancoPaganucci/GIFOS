@@ -1,7 +1,6 @@
 // CHECK FOR ADDED FAVS
 var list_favorites = [];
 function checkForAddedFavs() {
-    console.log("chequeo added favs");
     if (localStorage.getItem('favs-id')) {
         list_favorites = JSON.parse(localStorage.getItem('favs-id'));
     } else if (localStorage.getItem('favs-id') == null) {
@@ -17,7 +16,6 @@ const api_key = "vPymXrvJlo5Hndwx1Ls1M2VXRUlumFHn";
 
 // night mode check
 let nightmode_check = localStorage.getItem("nightmode-status");
-console.log("nightmode_check al ppio del refresh: " + nightmode_check);
 
 var btn_noct = document.getElementById("a-noct");
 var night = document.getElementsByClassName("modo-nocturno-main");
@@ -36,11 +34,9 @@ btn_noct.addEventListener('click', nightMode);
 btn_noct.addEventListener('click', () => {
     if (nightmode_check !== "true") {
         nightmode_check = "true";
-        console.log(nightmode_check);
         localStorage.setItem("nightmode-status", "true");
     } else {
         nightmode_check = "false";
-        console.log(nightmode_check);
         localStorage.setItem("nightmode-status", "false");
     }
 })
@@ -109,7 +105,6 @@ function search() {
     }
     // fetch con promesa
     let input_value = search_input.value;
-    console.log("input value: "+input_value)
     // Parámetros de newSearch(quote, offset)
     let info = newSearch(input_value, 0);
     info.then(response => {
@@ -126,7 +121,6 @@ function search() {
         clearInput();
         // BORRAR DIV AUTOCOMPLETE
         if (document.getElementById("div-search") !== null) {
-            console.log("acá encuentra el div search pero hay que borrarlo")
             document.getElementById("div-search").remove();
         }
         search_complete = 1;
@@ -162,7 +156,6 @@ function createGif(x) {
 
             // IF MOBILE, remove hover cards & apply fullGif
             else if (window.matchMedia("(max-width: 1023px)").matches) {
-                console.log("fullGif!!!");
                 let gif = document.createElement('img');
                 gif.className = "gifs-result";
                 gif.id = "gifs-" + i;
@@ -303,7 +296,6 @@ function createVerMasGifs(x, idnum) {
 
         // IF MOBILE, FULL GIF CARD
         else if (window.matchMedia("(max-width: 1023px)").matches) {
-            console.log("fullGif!!!");
             let gif = document.createElement('img');
             gif.className = "gifs-result";
             gif.id = "gifs-" + i;
@@ -344,11 +336,9 @@ function createHoverCard(this_gif_title,hover_cnt,this_gif_src,this_gif_object, 
     fav_svg.style.cursor = "pointer";
     fav_svg.setAttribute('src', "./assets/icon-fav.svg");
     fav_svg.addEventListener('mouseenter', () => {
-        console.log("mouseenter")
         fav_svg.setAttribute('src', "./assets/icon-fav-hover.svg");
     });
     fav_svg.addEventListener('mouseleave', () => {
-            console.log("mouseleave");
             fav_svg.setAttribute('src', "./assets/icon-fav.svg");
     });
     fav_svg.addEventListener('click', () => {
@@ -433,7 +423,6 @@ if (search_input) {
             search();
             
             if (document.getElementById("div-search") !== null) {
-                console.log("entró al borrar div-search")
                 document.getElementById("div-search").remove();
             }
         }
@@ -470,15 +459,14 @@ if (search_input) {
         let input_value = search_input.value;
         let info = predict(input_value);
         info.then(response => {
-            console.log(response.data);
+            //console.log(response.data);
             //creo contenedor
             if ((document.getElementById("div-search") !== null) || (input_value == "") || (response.data.length === 0)) {
-                console.log("ya creaste un div search! borralo antes de crear otro")
                 document.getElementById("div-search").remove();
                 if (document.getElementById("exit-icon")) {
                     document.getElementById("exit-icon").remove();
                 }
-            }
+            };
             let div_search = document.createElement('div');
             div_search.id = "div-search";
             // agrego el contenedor al searchbar
@@ -583,7 +571,6 @@ if (search_input) {
             }
 
             if (response.data.length === 0) {
-                console.log("Entra?")
                 document.getElementById("div-search").remove();
                 document.getElementById("exit-icon").remove();
                 document.getElementById("search-icon").style.marginLeft = "294px";
@@ -607,7 +594,6 @@ if (search_input) {
 
 //================= CARD GENERATOR FAV/DOWNLOAD =======================
 function fullGif(this_gif_src, this_gif_title, this_gif_object) {
-    console.log("prueba de agregar click evento a gifs")
     let main = document.getElementById("main-id");
     let cnt_card = document.createElement("div");
     cnt_card.id = "cnt-card";
@@ -741,7 +727,7 @@ function getGiphyTrendings(url) {
                 let this_gif_title = json.data[i].title;
                 // IF DESKTOP
                 if (window.matchMedia("(min-width: 1024px)").matches) {
-                    console.log("Entra en modo Desktop");
+                    //console.log("Entra en modo Desktop");
                     // create individual cnt for each gif (hover)
                     let hover_cnt = document.createElement("div");
                     hover_cnt.className = "hover-containers";
@@ -756,7 +742,7 @@ function getGiphyTrendings(url) {
                     reel.appendChild(hover_cnt);
                     // ELSE MOBILE
                 } else if (window.matchMedia("(max-width: 1023px)").matches) {
-                    console.log("Entra en modo Mobile");
+                    //console.log("Entra en modo Mobile");
                     let gif = document.createElement('img');
                     gif.className = "gifs";
                     gif.id = "trend-gifs-" + idnum;
@@ -829,7 +815,6 @@ slide_right.addEventListener('mouseleave', () => {
 // CreateHoverCardFaved (Se repite-- ver cómo importarla directamente de script-favs.js)
 // createHoverCardFaved()
 function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,this_gif_object) {
-    console.log("crear una nueva hover card pero ahora faveada")
     // create hover card
     let violet_card = document.createElement("div");
     violet_card.className = "violet-cards-faved";
@@ -889,7 +874,6 @@ function createHoverCardFaved(this_gif_title,hover_cnt,this_gif_src,this_gif_obj
     })
     // ====== GIF MAX (DESKTOP) ======
     fullsize.addEventListener('click', () => {
-        console.log("entró en gifMax");
         fullGifFaved(this_gif_src,this_gif_title,this_gif_object);
         window.scrollTo(0, 0);
     })
